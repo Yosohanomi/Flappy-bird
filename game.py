@@ -3,9 +3,14 @@ from random import randint
 
 pygame.init()
 
-back = pygame.transform.scale(pygame.image.load("bird.jpg", (500, 500)))
-mw = pygame.display.set_mode((500, 500))
-mw.blit(back,(0, 0))
+win_width = 500
+win_height = 500
+FPS = 3
+
+back = pygame.transform.scale(pygame.image.load('bird.jpg'), (win_width, win_height)) 
+
+mw = pygame.display.set_mode((win_width, win_height))
+mw.blit(back, (0, 0))
 
 clock = pygame.time.Clock()
 
@@ -41,10 +46,12 @@ class Label(Area):
         self.fill()
         mw.blit(self.image, (self.rect.x + shift_x, self.rect.y + shift_y))
 
-doge = Picture("doge.png", x, y, 50, 50)
+doge = Picture("doge.png", 160, 160, 50, 50)
 
 game_over = False
 
 while not game_over:
+    doge.fill()
+    doge.draw()
     pygame.display.update()
     clock.tick(60)
