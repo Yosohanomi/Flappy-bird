@@ -182,10 +182,10 @@ while not game_over:
         #         i +=1
 
         if move_up:
-            dog.move(6)
+            dog.move(-6)
 
         if move_down:
-            dog.move(-6)
+            dog.move(6)
         
         # if move_down:
         #     while i != 10:
