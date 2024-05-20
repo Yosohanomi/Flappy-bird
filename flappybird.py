@@ -66,7 +66,7 @@ class Bones():
 
 class Dog():
     def __init__(self, x, y):
-        self.dog = pygame.image.load("siba-removebg-preview.png")
+        self.dog = pygame.image.load("sibik.png")
         self.x = x
         self.y = y
 
@@ -187,6 +187,10 @@ while not game_over:
         if move_down:
             dog.move(6)
         
+        if bone_x > dog_x:
+            points +=1
+        score.set_text(str(points), 40, black)
+        score.draw(0,0)
         # if move_down:
         #     while i != 10:
         #         sleep(0.001)
