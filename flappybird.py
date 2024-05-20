@@ -140,6 +140,11 @@ while not game_over:
     score.set_text("0", 30, black)
     score.draw(0,0)
 
+    if bone_x > dog_x:
+        points +=1
+    score.set_text(str(points), 30, black)
+    score.draw(0,0)
+
     last_bone_x = bones_list[-1].x if bones_list else dog_x
 
     if bones_list and (bones_list[0].x + 85 < 0):
@@ -187,10 +192,7 @@ while not game_over:
         if move_down:
             dog.move(6)
         
-        if bone_x > dog_x:
-            points +=1
-        score.set_text(str(points), 40, black)
-        score.draw(0,0)
+        
         # if move_down:
         #     while i != 10:
         #         sleep(0.001)
